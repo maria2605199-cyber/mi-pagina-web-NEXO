@@ -81,19 +81,27 @@
         <div class="devices reveal" data-delay="2" aria-hidden="true">
           <div class="laptop">
             <div class="laptop__screen">
-              <div class="ui">
-                <div class="ui__bar"><i></i><i></i><i></i><span class="ui__url">tunegocio.com</span></div>
-                <div class="ui__nav"><b>AURUM</b><span></span><span></span><span></span><em></em></div>
-                <div class="ui__hero">
-                  <div class="ui__text">
-                    <small></small>
-                    <strong></strong><strong class="short"></strong>
-                    <p></p><p class="short"></p>
-                    <div class="ui__btns"><em></em><u></u></div>
+              <div class="site">
+                <div class="site__bar"><i></i><i></i><i></i><span class="site__url">brasa.mx</span></div>
+                <div class="site__hero" style="--img: url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1100&q=70')">
+                  <div class="site__nav">
+                    <b class="site__logo">BRA<span>S</span>A</b>
+                    <span class="is-on">Inicio</span><span>Menú</span><span>Reservas</span><span>Contacto</span>
+                    <em class="site__btn">Reservar mesa</em>
                   </div>
-                  <div class="ui__img"><div class="ui__img-sun"></div></div>
+                  <div class="site__copy">
+                    <i>Bienvenido a Brasa</i>
+                    <h4>Buena comida,<br><span>buen momento</span></h4>
+                    <p>Cortes a la parrilla, ingredientes frescos y un ambiente pensado para disfrutar.</p>
+                    <div class="site__cta"><em>Reservar mesa</em><u>Ver menú</u></div>
+                  </div>
+                  <div class="site__menu">
+                    <div class="dish"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=360&q=70')"></div><div class="dish__info"><span>Pasta de la casa</span><b>$190</b></div></div>
+                    <div class="dish"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=360&q=70')"></div><div class="dish__info"><span>Salmón glaseado</span><b>$285</b></div></div>
+                    <div class="dish"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=360&q=70')"></div><div class="dish__info"><span>Brochetas al grill</span><b>$240</b></div></div>
+                    <div class="dish"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=360&q=70')"></div><div class="dish__info"><span>Postre del día</span><b>$120</b></div></div>
+                  </div>
                 </div>
-                <div class="ui__cards"><div></div><div></div><div></div></div>
               </div>
             </div>
             <div class="laptop__base"></div>
@@ -101,14 +109,20 @@
 
           <div class="phone">
             <div class="phone__notch"></div>
-            <div class="ui ui--phone">
-              <div class="ui__nav"><b>AURUM</b><em class="burger"></em></div>
-              <div class="ui__img ui__img--phone"><div class="ui__img-sun"></div></div>
-              <small></small>
-              <strong></strong><strong class="short"></strong>
-              <p></p><p class="short"></p>
-              <div class="ui__btns"><em></em></div>
-              <div class="ui__list"><div></div><div></div></div>
+            <div class="site site--phone">
+              <div class="site__hero" style="--img: url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500&q=70')">
+                <div class="site__nav"><b class="site__logo">BRA<span>S</span>A</b><i class="site__burger"></i></div>
+                <div class="site__copy">
+                  <i>Bienvenido a Brasa</i>
+                  <h4>Buena comida, <span>buen momento</span></h4>
+                  <div class="site__cta"><em>Reservar mesa</em></div>
+                </div>
+              </div>
+              <div class="site__list">
+                <div class="dish-row"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=160&q=70')"></div><span>Pasta de la casa</span><b>$190</b></div>
+                <div class="dish-row"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=160&q=70')"></div><span>Salmón glaseado</span><b>$285</b></div>
+                <div class="dish-row"><div class="dish__img" style="--img: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=160&q=70')"></div><span>Postre del día</span><b>$120</b></div>
+              </div>
             </div>
           </div>
 
@@ -272,12 +286,17 @@
 
         <div class="projects">
           <article class="project project--wide reveal">
-            <div class="project__visual pv pv--rest" aria-hidden="true">
-              <div class="pv__frame">
-                <div class="pv__nav"><b>Olivo</b><span></span><span></span><span></span></div>
-                <div class="pv__body">
-                  <div class="pv__copy"><small></small><strong></strong><strong class="short"></strong><em></em></div>
-                  <div class="pv__plate"></div>
+            <div class="project__visual" aria-hidden="true">
+              <div class="pv pv--olivo">
+                <div class="pv__nav"><b>Olivo</b><span>Menú</span><span>Nosotros</span><span>Reservas</span></div>
+                <div class="pv__split">
+                  <div class="pv__copy">
+                    <small>Cocina mediterránea</small>
+                    <strong>Sabores que reúnen a la mesa</strong>
+                    <p>Platillos de temporada, vinos seleccionados y reservaciones en un clic.</p>
+                    <em>Ver menú</em>
+                  </div>
+                  <div class="pv__photo" style="--img: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=700&q=70')"></div>
                 </div>
               </div>
             </div>
@@ -289,12 +308,13 @@
           </article>
 
           <article class="project reveal" data-delay="1">
-            <div class="project__visual pv pv--corp" aria-hidden="true">
-              <div class="pv__frame">
-                <div class="pv__nav"><b>Vértice</b><span></span><span></span></div>
-                <div class="pv__body pv__body--col">
-                  <small></small><strong></strong><strong class="short"></strong>
-                  <div class="pv__stats"><div></div><div></div><div></div></div>
+            <div class="project__visual" aria-hidden="true">
+              <div class="pv pv--vertice" style="--img: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=70')">
+                <div class="pv__nav"><b>Vértice</b><span>Servicios</span><span>Contacto</span></div>
+                <div class="pv__copy">
+                  <small>Consultoría empresarial</small>
+                  <strong>Estrategia que impulsa a tu empresa</strong>
+                  <div class="pv__chips"><span>Finanzas</span><span>Procesos</span><span>Talento</span></div>
                 </div>
               </div>
             </div>
@@ -306,12 +326,14 @@
           </article>
 
           <article class="project reveal">
-            <div class="project__visual pv pv--land" aria-hidden="true">
-              <div class="pv__frame">
-                <div class="pv__nav"><b>Lumé</b><span></span></div>
-                <div class="pv__body pv__body--center">
-                  <small></small><strong></strong><strong class="short"></strong><em></em>
-                  <div class="pv__bottle"></div>
+            <div class="project__visual" aria-hidden="true">
+              <div class="pv pv--lume">
+                <div class="pv__photo" style="--img: url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=500&q=70')"></div>
+                <div class="pv__copy">
+                  <b class="pv__brand">Lumé</b>
+                  <small>Nuevo lanzamiento</small>
+                  <strong>Tu piel, en su mejor versión</strong>
+                  <div class="pv__field"><span>Tu correo</span><em>Quiero el mío</em></div>
                 </div>
               </div>
             </div>
@@ -323,16 +345,23 @@
           </article>
 
           <article class="project project--wide reveal" data-delay="1">
-            <div class="project__visual pv pv--studio" aria-hidden="true">
-              <div class="pv__frame">
-                <div class="pv__nav"><b>Atelier Nora</b><span></span><span></span><span></span></div>
-                <div class="pv__gallery"><div></div><div></div><div></div><div></div></div>
+            <div class="project__visual" aria-hidden="true">
+              <div class="pv pv--vela">
+                <div class="pv__nav"><b>VELA</b><span>Mujer</span><span>Hombre</span><span>Novedades</span><i class="pv__bag"></i></div>
+                <div class="pv__shop">
+                  <div class="pv__banner" style="--img: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=70')">
+                    <small>Nueva colección</small><strong>Otoño esencial</strong><em>Comprar</em>
+                  </div>
+                  <div class="pv__product"><div class="pv__photo" style="--img: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=360&q=70')"></div><span>Vestido lino</span><b>$890</b></div>
+                  <div class="pv__product"><div class="pv__photo" style="--img: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=360&q=70')"></div><span>Blusa satinada</span><b>$640</b></div>
+                  <div class="pv__product"><div class="pv__photo" style="--img: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=360&q=70')"></div><span>Bolso piel</span><b>$1,250</b></div>
+                </div>
               </div>
             </div>
             <div class="project__info">
-              <span class="project__cat">Rediseño · Concepto</span>
-              <h3>Atelier Nora — Estudio de interiores</h3>
-              <p>Portafolio visual con galería de proyectos y experiencia móvil cuidada.</p>
+              <span class="project__cat">Tienda en línea · Concepto</span>
+              <h3>Vela — Tienda de ropa</h3>
+              <p>Catálogo con fotos, precios, tallas y pedidos directos por WhatsApp.</p>
             </div>
           </article>
         </div>
