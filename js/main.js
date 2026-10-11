@@ -5,7 +5,7 @@
 // Número de WhatsApp en formato internacional, solo dígitos.
 // Ejemplo México: "5215512345678". Mientras esté vacío, WhatsApp
 // pedirá elegir el contacto al abrir el enlace.
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "526731144723";
 
 const DEFAULT_MESSAGE = "Hola NEXO, me interesa una página web para mi negocio. ¿Podemos hablar?";
 
