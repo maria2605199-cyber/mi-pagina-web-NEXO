@@ -187,13 +187,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .nav.is-scrolled .nav__inner { height: 72px; }
 
-.logo {
-  font-family: var(--serif);
-  font-size: 30px; font-weight: 600;
-  letter-spacing: 0.18em;
-  line-height: 1;
-}
-.logo__dot { color: var(--gold); letter-spacing: 0; }
+.logo { display: inline-block; line-height: 0; }
+.logo img { width: auto; height: 30px; transition: height .5s var(--ease), opacity .4s; }
+.nav.is-scrolled .logo img { height: 26px; }
+.logo:hover img { opacity: .85; }
+.logo--footer img { height: 72px; }
 
 .nav__links { display: flex; gap: 40px; }
 .nav__links a {
@@ -844,7 +842,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 @media (max-width: 640px) {
   .nav__inner { height: 72px; }
-  .logo { font-size: 26px; }
+  .nav .logo img { height: 24px; }
 
   .hero__actions .btn { width: 100%; }
   .devices__badge { display: none; }
