@@ -1,0 +1,6 @@
+# Solo es leído por los buscadores cuando el sitio está en la raíz de un dominio propio.
+User-agent: *
+Allow: /
+Disallow: /marketing/
+
+Sitemap: https://maria2605199-cyber.github.io/mi-pagina-web-NEXO/sitemap.xml

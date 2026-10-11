@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
       # Versiona CSS y JS con el commit para que los navegadores no usen copias viejas
       - name: Versionar archivos
-        run: sed -i "s/__VERSION__/${GITHUB_SHA::7}/g" index.html
+        run: sed -i "s/__VERSION__/${GITHUB_SHA::7}/g" index.html aviso-de-privacidad.html 404.html
       - uses: actions/configure-pages@v5
         with:
           enablement: true
