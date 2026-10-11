@@ -118,6 +118,29 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(whatsappUrl(lines.join("\n")), "_blank", "noopener");
   });
 
+  /* ---------- Fotos bajo demanda ---------- */
+  // Las fotos usan data-img y solo se descargan cuando se van a ver.
+  const loadImages = (root) => {
+    const els = root.matches?.("[data-img]") ? [root] : [];
+    els.concat([...root.querySelectorAll("[data-img]")]).forEach((el) => {
+      el.style.setProperty("--img", `url('${el.dataset.img}')`);
+      el.removeAttribute("data-img");
+    });
+  };
+  const lazyEls = [...document.querySelectorAll("[data-img]")].filter((el) => !el.closest(".showcase"));
+  if ("IntersectionObserver" in window) {
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        loadImages(entry.target);
+        imgObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: "400px 0px" });
+    lazyEls.forEach((el) => imgObserver.observe(el));
+  } else {
+    lazyEls.forEach(loadImages);
+  }
+
   /* ---------- Carrusel de estilos en los dispositivos ---------- */
   const showcase = document.querySelector(".showcase");
   if (showcase) {
@@ -131,8 +154,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showcase.style.setProperty("--slide-ms", `${SLIDE_MS}ms`);
 
+    // Carga las fotos del estilo indicado (y del siguiente, para que el cambio sea fluido)
+    const loadSlide = (i) => {
+      [laptopSlides, phoneSlides].forEach((list) => list[i % list.length] && loadImages(list[i % list.length]));
+    };
+    loadSlide(0);
+    // El segundo estilo se precarga después, para no competir con la carga inicial
+    window.addEventListener("load", () => setTimeout(() => loadSlide(1), 1500));
+
     const show = (i) => {
       current = (i + tabs.length) % tabs.length;
+      loadSlide(current);
+      loadSlide(current + 1);
       [laptopSlides, phoneSlides, tabs].forEach((list) =>
         list.forEach((el, j) => el.classList.toggle("is-active", j === current))
       );
