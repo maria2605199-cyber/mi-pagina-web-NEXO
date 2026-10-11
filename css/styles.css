@@ -918,6 +918,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transform: rotate(-45deg);
 }
 .plan .btn { margin-top: auto; }
+.persuade {
+  position: relative;
+  margin: 72px auto 0; max-width: 880px;
+  padding: 56px clamp(24px, 6vw, 72px);
+  text-align: center;
+  border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line);
+}
+.persuade::before {
+  content: "\201C"; position: absolute; top: -34px; left: 50%; transform: translateX(-50%);
+  padding: 0 16px; background: var(--black);
+  font-family: var(--serif); font-size: 80px; line-height: 1; color: var(--gold);
+}
+.persuade p {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(26px, 3.2vw, 40px); line-height: 1.25;
+  margin-bottom: 36px;
+}
+.persuade p em { color: var(--gold-light); }
 .plans__note { text-align: center; margin-top: 40px; color: var(--gray); font-size: 15px; }
 .plans__note a { color: var(--gold); border-bottom: 1px solid var(--gold-line); transition: color .4s, border-color .4s; }
 .plans__note a:hover { color: var(--gold-light); border-color: var(--gold-light); }
