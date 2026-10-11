@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0A0A0A;--black2:#111;--gold:#C6A96B;--gold2:#E5D2A0;--white:#F5F3EF;--gray:#A1A1AA;--serif:"Cormorant Garamond",serif;--sans:"Manrope",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;font-family:var(--sans);color:var(--white)}
+.art{position:relative;overflow:hidden;background:var(--black);margin:40px}
+.art::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 15%,rgba(198,169,107,.16),transparent 55%);pointer-events:none}
+.grid::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(245,243,239,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(245,243,239,.05) 1px,transparent 1px);background-size:90px 90px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 70% 30%,#000,transparent 75%);pointer-events:none}
+.frame{position:absolute;inset:44px;border:1px solid rgba(198,169,107,.35);pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:22px;font-size:26px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:56px;height:1.5px;background:var(--gold)}
+.serif{font-family:var(--serif);font-weight:500;line-height:1.02}
+em{font-style:italic;color:var(--gold2)}
+.foot{position:absolute;left:100px;right:100px;bottom:100px;display:flex;justify-content:space-between;align-items:center;font-size:26px;letter-spacing:.08em;color:var(--gray)}
+.foot b{color:var(--gold);font-weight:600}
+.logo-sm{height:46px}
+.btn{display:inline-block;background:var(--gold);color:var(--black);font-weight:700;font-size:28px;letter-spacing:.06em;padding:26px 44px}
+
+/* Perfil */
+#perfil{width:1080px;height:1080px;display:grid;place-items:center}
+#perfil::before{background:radial-gradient(circle at 50% 45%,rgba(198,169,107,.14),transparent 60%)}
+#perfil img{width:700px;position:relative}
+
+/* Portada Facebook */
+#portada{width:1640px;height:624px;display:flex;align-items:center;justify-content:center;gap:120px}
+#portada img{width:520px;position:relative}
+#portada .sep{width:1px;height:260px;background:rgba(198,169,107,.4);position:relative}
+#portada .txt{position:relative;max-width:680px}
+#portada .eyebrow{font-size:20px;white-space:nowrap}
+#portada h2{font-size:64px;margin:22px 0 26px}
+#portada p{font-size:26px;color:var(--gray)}
+
+/* Posts 1080x1350 */
+.post{width:1080px;height:1350px;padding:100px}
+.post .top{position:relative;display:flex;justify-content:space-between;align-items:center}
+.post .top span{font-size:24px;letter-spacing:.2em;color:var(--gray)}
+.post .body{position:relative;margin-top:180px}
+#post1 h1{font-size:132px;margin-top:48px}
+#post1 p{font-size:36px;line-height:1.5;color:var(--gray);margin-top:56px;max-width:820px}
+#post2 h1{font-size:84px;margin:36px 0 44px}
+#post2 ol{list-style:none;border-top:1px solid rgba(245,243,239,.12)}
+#post2 li{display:flex;align-items:baseline;gap:36px;padding:19px 0;border-bottom:1px solid rgba(245,243,239,.12);font-size:36px}
+#post2 li i{font-family:var(--serif);font-size:34px;color:var(--gold);font-style:italic;width:56px}
+#post2 .body{margin-top:80px}
+#post3 .body{margin-top:110px}
+#post3 h1{font-size:96px;margin:40px 0 64px}
+.plan{display:flex;justify-content:space-between;align-items:center;padding:40px 48px;border:1px solid rgba(245,243,239,.12);margin-bottom:24px;background:var(--black2)}
+.plan.feat{border-color:var(--gold)}
+.plan h3{font-family:var(--serif);font-weight:500;font-size:52px}
+.plan small{display:block;font-size:24px;color:var(--gray);margin-top:6px}
+.plan .p{text-align:right}
+.plan .p span{font-size:22px;color:var(--gray);display:block}
+.plan .p b{font-family:var(--serif);font-weight:500;font-size:68px;color:var(--gold2)}
+#post4{display:flex;flex-direction:column;justify-content:center;text-align:center}
+#post4 .q{font-family:var(--serif);font-size:200px;color:var(--gold);line-height:.6;position:relative}
+#post4 h1{position:relative;font-size:76px;line-height:1.18;margin:40px 0 70px}
+#post4 .btn{position:relative;align-self:center}
+
+/* Historia 1080x1920 */
+#historia{width:1080px;height:1920px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px}
+#historia img{width:780px;position:relative;margin-bottom:120px}
+#historia .eyebrow{position:relative;justify-content:center}
+#historia .eyebrow::after{content:"";width:56px;height:1.5px;background:var(--gold)}
+#historia h1{position:relative;font-size:150px;margin:56px 0 64px}
+#historia .eyebrow{font-size:32px}
+#historia .btn{font-size:36px;padding:34px 60px}
+#historia p{position:relative;font-size:46px;color:var(--gray);line-height:1.5;margin-bottom:90px}
+#historia .url{position:relative;font-size:32px;color:var(--gold2);margin-top:48px;letter-spacing:.04em}
+</style></head><body>
+
+<div class="art" id="perfil"><img src="logo-completo-hd.png" alt=""></div>
+
+<div class="art grid" id="portada">
+  <img src="logo-completo-hd.png" alt=""><div class="sep"></div>
+  <div class="txt"><div class="eyebrow">Estudio digital · Diseño web</div>
+  <h2 class="serif">Páginas web que convierten <em>visitantes en clientes.</em></h2>
+  <p>Cotiza gratis por WhatsApp · 673 114 4723</p></div>
+</div>
+
+<div class="art grid post" id="post1"><div class="frame"></div>
+  <div class="top"><img class="logo-sm" src="logo-hd.png" alt=""><span>01 / LANZAMIENTO</span></div>
+  <div class="body"><div class="eyebrow">Estudio digital · Diseño web</div>
+  <h1 class="serif">Tu negocio merece una presencia digital <em>extraordinaria.</em></h1>
+  <p>Diseñamos páginas web modernas y profesionales que elevan la imagen de tu negocio.</p></div>
+  <div class="foot"><span>Cotiza gratis</span><b>Link en bio →</b></div>
+</div>
+
+<div class="art post" id="post2"><div class="frame"></div>
+  <div class="top"><img class="logo-sm" src="logo-hd.png" alt=""><span>02 / SERVICIOS</span></div>
+  <div class="body"><div class="eyebrow">Lo que hacemos</div>
+  <h1 class="serif">Soluciones para negocios que <em>quieren crecer.</em></h1>
+  <ol><li><i>01</i>Páginas web a medida</li><li><i>02</i>Sitios para empresas</li><li><i>03</i>Landing pages</li><li><i>04</i>Páginas para restaurantes</li><li><i>05</i>Tiendas en línea</li><li><i>06</i>Rediseño web</li></ol></div>
+  <div class="foot"><span>WhatsApp 673 114 4723</span><b>Link en bio →</b></div>
+</div>
+
+<div class="art grid post" id="post3"><div class="frame"></div>
+  <div class="top"><img class="logo-sm" src="logo-hd.png" alt=""><span>03 / PLANES</span></div>
+  <div class="body"><div class="eyebrow">Precios de lanzamiento</div>
+  <h1 class="serif">Una inversión clara <em>para tu negocio.</em></h1>
+  <div class="plan"><div><h3>Esencial</h3><small>Landing page</small></div><div class="p"><span>desde</span><b>$5,900</b></div></div>
+  <div class="plan feat"><div><h3>Profesional</h3><small>Sitio completo · Recomendado</small></div><div class="p"><span>desde</span><b>$11,900</b></div></div>
+  <div class="plan"><div><h3>Tienda en línea</h3><small>Catálogo y pedidos por WhatsApp</small></div><div class="p"><span>desde</span><b>$17,900</b></div></div></div>
+  <div class="foot"><span>Precios en MXN</span><b>Cotiza gratis →</b></div>
+</div>
+
+<div class="art post" id="post4"><div class="frame"></div>
+  <div class="q">“</div>
+  <h1 class="serif">Tus clientes ya te están buscando en internet. <em>¿Te van a encontrar a ti o a tu competencia?</em></h1>
+  <span class="btn">Escríbenos por WhatsApp</span>
+  <div class="foot"><img class="logo-sm" src="logo-hd.png" alt=""><b>Link en bio →</b></div>
+</div>
+
+<div class="art grid" id="historia"><div class="frame"></div>
+  <img src="logo-completo-hd.png" alt="">
+  <div class="eyebrow">Ya estamos en línea</div>
+  <h1 class="serif">Conoce nuestra <em>nueva página.</em></h1>
+  <p>Diseño web de alto nivel para negocios que quieren destacar.</p>
+  <span class="btn">Visitar página</span>
+  <div class="url">maria2605199-cyber.github.io/mi-pagina-web-NEXO</div>
+</div>
+</body></html>
