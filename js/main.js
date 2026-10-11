@@ -118,5 +118,48 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(whatsappUrl(lines.join("\n")), "_blank", "noopener");
   });
 
+  /* ---------- Carrusel de estilos en los dispositivos ---------- */
+  const showcase = document.querySelector(".showcase");
+  if (showcase) {
+    const SLIDE_MS = 5000;
+    const tabs = [...showcase.querySelectorAll(".showcase__tab")];
+    const laptopSlides = [...showcase.querySelectorAll(".laptop__screen > .site")];
+    const phoneSlides = [...showcase.querySelectorAll(".phone > .site")];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+    let timer = null;
+
+    showcase.style.setProperty("--slide-ms", `${SLIDE_MS}ms`);
+
+    const show = (i) => {
+      current = (i + tabs.length) % tabs.length;
+      [laptopSlides, phoneSlides, tabs].forEach((list) =>
+        list.forEach((el, j) => el.classList.toggle("is-active", j === current))
+      );
+      // Reinicia la barra de progreso de la pestaña activa
+      const active = tabs[current];
+      active.classList.remove("is-active");
+      void active.offsetWidth;
+      active.classList.add("is-active");
+    };
+    const start = () => {
+      if (reduceMotion) return;
+      clearInterval(timer);
+      timer = setInterval(() => show(current + 1), SLIDE_MS);
+      showcase.classList.remove("is-paused");
+    };
+    const stop = () => {
+      clearInterval(timer);
+      showcase.classList.add("is-paused");
+    };
+
+    tabs.forEach((tab, i) => tab.addEventListener("click", () => { show(i); start(); }));
+    showcase.addEventListener("mouseenter", stop);
+    showcase.addEventListener("mouseleave", start);
+    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+    if (reduceMotion) showcase.classList.add("is-paused");
+    start();
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 });
