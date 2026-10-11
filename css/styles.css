@@ -1057,11 +1057,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .footer { margin-top: 0; padding: 80px 0 40px; border-top: 1px solid var(--line); background: var(--black); }
 .footer__inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-bottom: 56px; }
 .footer__tag { color: var(--gray); font-size: 15px; margin-top: 18px; max-width: 320px; }
+.footer__contact { color: var(--gray); font-size: 14px; line-height: 1.6; margin-top: 14px; }
+.footer__contact a { display: inline-block; padding: 10px 0; color: var(--gold); word-break: break-all; }
+.footer__contact a:hover { color: var(--gold-light); }
 .footer__links { display: flex; gap: 36px; flex-wrap: wrap; align-items: flex-start; }
 .footer__links a, .footer__top { display: inline-flex; align-items: center; min-height: 44px; color: var(--gray); font-size: 14px; transition: color .4s; }
 .footer__links a:hover, .footer__top:hover { color: var(--gold-light); }
 .footer__bottom {
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
   padding-top: 32px; border-top: 1px solid var(--line);
   color: var(--gray); font-size: 13px;
 }
