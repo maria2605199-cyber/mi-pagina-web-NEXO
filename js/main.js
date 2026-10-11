@@ -161,5 +161,14 @@ document.addEventListener("DOMContentLoaded", () => {
     start();
   }
 
+  /* ---------- Comparador antes / después ---------- */
+  const compare = document.getElementById("compare");
+  if (compare) {
+    const range = compare.querySelector(".compare__range");
+    const update = () => compare.style.setProperty("--pos", `${range.value}%`);
+    range.addEventListener("input", update);
+    update();
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 });
